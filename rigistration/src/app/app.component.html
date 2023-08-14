@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>User Rigistration</h1>
+  <form #login="ngForm" (ngSubmit)="submit(login)">
+   <div class="form-group">
+      <label for="firstname">Firstname</label><br>
+      <input #name="ngModel" required minlength="2" maxlength="7" type="text" class="form=control" name="firstname"
+        ngModel>
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        <p *ngIf="name.errors'required'">username Required</p>
+        <p *ngIf="name.errors'minlength'">sorry! short username</p>
+
+      </div>
+    </div>
+    <div class="form-group">
+
+      <label for="firstname">FirstName</label><br>
+
+      <input required minlength="2" maxlength="7" type="text" name="firstname" class = "form-control" #name="ngModel" ngModel>
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+
+          <p *ngIf="validateUsernameRequired(name.errors)">Username Required!</p>
+
+          <p *ngIf="validateUsernameminLength(name.errors)">Sorry! Short Username</p>
+
+      </div>
+
+  </div>
+
+
+
+    <pre></pre>
+    <div class="form-group">
+      <label for="lastname">Lastname</label><br>
+      
+      <input required minlength="4" maxlength="7" type="text" name="lastname" class = "form-control" #name="ngModel" ngModel>
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+
+        <p *ngIf="validatelastnameRequired(name.errors)">lastname Required!</p>
+
+        <p *ngIf="validatelastnameminLength(name.errors)">Sorry! Short lastname</p>
+
+    </div>
+      
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="email">Email</label><br />
+      <input type="text" class="form=control" name="email" ngmodel>
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="password">Password</label><br>
+      <input type="text" class="form=control" name="password" ngmodel>
+    </div>
+    <pre></pre>
+    <button class="btn btn-primary" type="submit">submit</button>
+
+  </form>
+</div>
